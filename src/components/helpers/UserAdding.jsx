@@ -5,6 +5,7 @@ const UserAdding = () => {
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [dob, setDob] = useState('');
+    const [url, setURL] = useState('');
 
     const handleFirstName = (value) =>{
         setFirstName(value);
@@ -14,6 +15,9 @@ const UserAdding = () => {
     }
     const handleEmail = (value) =>{
         setEmail(value);
+    }
+    const handleURL = (value) =>{
+        setURL(value);
     }
     const handleDob = (value) =>{
         setDob(value);
@@ -25,6 +29,7 @@ const UserAdding = () => {
         const user = {
             Name : firstName+" "+lastName,
             Email : email,
+            URL : url,
             DOB : dob
         }
         parsedUsers.push(user);
@@ -52,7 +57,11 @@ const UserAdding = () => {
 
         <label className='form-label'>Email</label>
         <input className='form-control' onChange={e => {handleEmail(e.target.value)}} type='text'></input>
-
+        
+        <label className='form-label'>Pase User Image URL</label>
+        <input className='form-control' onChange={e => {handleURL(e.target.value)}} type='text'></input>
+        
+        
         <label className='form-label'>Date of Birth</label>
         <input className='form-control' onChange={e => {handleDob(e.target.value)}} type='text'></input>
       </div>
